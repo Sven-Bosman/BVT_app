@@ -1,47 +1,33 @@
 <?php
-//test if branch worked
-class test_File{
+@include_once '../dbh/dbh.php'; 
 
-    private string $name; 
-    private string $mode; 
-    private bool $use_path;
-    private string $context = ''; 
+$submitMethod = ''; // Maak een variabele om de verzendingsmethode op te slaan
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $submitMethod = "Formulier succesvol verwerkt via POST";
     
+    // Verkrijg formuliervelden
+    $naam = $_POST["naam"];
+    $email = $_POST["email"];
+    $bericht = $_POST["bericht"];
 
-    
+    // Creëer een CSV-bestand of open het bestaande bestand om gegevens toe te voegen
+    $bestandsnaam = "log/log.csv";
 
-    public function __construct($name, $mode, $use_path) {
-        $this->name = $name;
-        $this->mode = $mode;
-        $this->use_path = $use_path;
+    // Als het bestand nog niet bestaat, voeg de koppen toe
+    if (!file_exists($bestandsnaam)) {
+        $bestand = fopen($bestandsnaam, "a");
+        fputcsv($bestand, array("Naam", "E-mail", "Bericht"));
+        fclose($bestand);
     }
 
-    public function read_file(){
-
-    }
-
-    public function create_file(){
-       $this->file = fopen($this->name, $this->mode, $this->use_path); 
-
-    }
-
-    public function write_file($data){
-        fwrite( );
-    }
-
+    // Voeg gegevens toe aan het CSV-bestand
+    $bestand = fopen($bestandsnaam, "a");
+    fputcsv($bestand, array($naam, $email, $bericht));
+    fclose($bestand);
 }
 
-$file1 = new test_File("log\log.txt", 'w', true);
-$file1->create_file(); 
-$file1->write_file("hello");  
-
-
-
-
-
-
-
-
+?>
 
 
 
