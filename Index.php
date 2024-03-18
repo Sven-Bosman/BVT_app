@@ -16,7 +16,7 @@
             <ul>
                 <li><button>Form</button></li>
                 <li><button>samenVatting</button></li>
-                <li><a href="php/gegevens.php">Gegevens</a></li>
+                <li><a href="php/create_file.php">Gegevens</a></li>
             </ul>
         </nav>
     </header>

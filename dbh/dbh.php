@@ -28,11 +28,13 @@ class DatabaseConnection {
         }
     }
 
-    public static function Create($table, $data){
-        $columns = implode(", ", array_keys($data));
-        $values = "'" . implode("', '", array_values($data)). "'";
-
-        $sql = "INSERT INTO $table ($columns) VALUES ($values)"; 
+    public static function Create(){
+        $sql = "CREATE TABLE IF NOT EXISTS voorbeeld (
+            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            naam VARCHAR(30) NOT NULL,
+            email VARCHAR(50),
+            geboortedatum DATE
+        )";; 
 
         if(self::$conn->query($sql) === true){
             return true; 

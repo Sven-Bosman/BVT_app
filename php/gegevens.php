@@ -5,8 +5,8 @@
 
 
 // Query om alle gegevens uit de database op te halen
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
