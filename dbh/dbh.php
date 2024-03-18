@@ -106,4 +106,3 @@ DatabaseConnection::connect();
 // Hier voer je de databasebewerkingen uit...
 
 // Sluit de databaseverbinding wanneer klaar
-DatabaseConnection::closeConnection();

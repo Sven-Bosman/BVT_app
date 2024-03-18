@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
 }
 
 // Sluit de databaseverbinding
-$conn->close();
+DatabaseConnection::closeConnection(); 
 ?>
 
 </body>
