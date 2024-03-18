@@ -18,7 +18,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!file_exists($bestandsnaam)) {
         $bestand = fopen($bestandsnaam, "a");
         fputcsv($bestand, array("Naam", "E-mail", "Bericht"));
-        DatabaseConnection::Create('new_table', array("Naam", "E-mail", "Bericht")); 
         fclose($bestand);
     }
 
