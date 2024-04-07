@@ -30,12 +30,11 @@
         Naam: <input type="text" name="naam" required><br>
         E-mail: <input type="email" name="email" required><br>
         Bericht: <textarea name="bericht" required></textarea><br>
+        check: <input type="radio" name="check" id="checked">
         <input type="submit" value="Verzenden">
     </form>
 
 
-        <button type="submit">Submit</button>
-    </form>
 </div>
 </body>
 
