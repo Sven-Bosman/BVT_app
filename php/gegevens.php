@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/gegevens.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>Gegevens</title>
 </head>
 <body>
+<header>
+        <nav>
+            <ul>
+                <li class="h-list"><button>Form</button></li>
+                <li class="h-list"><a href="../Index.php">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
     
     <?php
     // Functie om CSV-bestand naar een PHP-array te converteren
@@ -47,6 +58,6 @@
     // file_put_contents("output.php", $phpCode);
     ?>
 
-
+</main>
 </body>
 </html>
