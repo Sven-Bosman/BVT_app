@@ -17,11 +17,11 @@
             <ul>
                 <li class="h-list"><button>Form</button></li>
                 <li class="h-list"><button>samenVatting</button></li>
-                <li class="h-list"><a href="php/gegevens.php">Gegevens</a></li>
+                <li class="h-list"><a class="nuw" href="php/gegevens.php">Gegevens</a></li>
             </ul>
         </nav>
     </header>
-<main>    
+<div class="outer_form">
     <div class="batterij" id="batterij-1"></div>
     <div class="batterij" id="batterij-2"></div>
     <div class="batterij" id="batterij-3"></div>
@@ -36,7 +36,7 @@
 
         <button type="submit">Submit</button>
     </form>
-</main>
+</div>
 </body>
 
 <script src="js/main.js">
