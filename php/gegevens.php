@@ -1,50 +1,39 @@
 <?php
-@include_once '../dbh/dbh.php'; 
-// Verbindingsgegevens voor de database
-// Maak verbinding met de database
 
-
-// Query om alle gegevens uit de database op te halen
-?>
-
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gegevens opvragen uit Database</title>
-</head>
-<body>
-
-<h1>Gegevens opvragen uit Database</h1>
-
-<?php
-// Controleer of er resultaten zijn
-if ($result->num_rows > 0) {
-    // Toon de gegevens in een tabel
-    echo "<table border='1'>
-            <tr>
-                <th>Naam</th>
-                <th>E-mail</th>
-                <th>Bericht</th>
-            </tr>";
-
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>
-                <td>" . $row["naam"] . "</td>
-                <td>" . $row["email"] . "</td>
-                <td>" . $row["bericht"] . "</td>
-              </tr>";
+// Functie om CSV-bestand naar een PHP-array te converteren
+function csvToPhpArray($csvFile) {
+    $csvData = [];
+    
+    // Open het CSV-bestand om te lezen
+    if (($handle = fopen($csvFile, "r")) !== FALSE) {
+        // Loop door elke rij in het CSV-bestand
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            // Voeg de rij toe aan de array
+            $csvData[] = $data;
+        }
+        fclose($handle);
     }
-
-    echo "</table>";
-} else {
-    echo "Geen gegevens gevonden in de database.";
+    
+    return $csvData;
 }
 
-// Sluit de databaseverbinding
-$conn->close();
-?>
+// CSV-bestandspad
+$csvFile = "../log/log.csv";
 
-</body>
-</html>
+// Gebruik de functie om CSV naar PHP-array te converteren
+$csvData = csvToPhpArray($csvFile);
+
+// HTML tabel weergave
+echo "<table border='1'>";
+foreach ($csvData as $row) {
+    echo "<tr>";
+    foreach ($row as $cell) {
+        echo "<td>" . htmlspecialchars($cell) . "</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+
+// Optioneel: Opslaan van de PHP-code in een bestand
+// file_put_contents("output.php", $phpCode);
+?>
