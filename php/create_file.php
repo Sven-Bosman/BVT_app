@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Voeg gegevens toe aan het CSV-bestand
     $bestand = fopen($bestandsnaam, "a");
-    fputcsv($bestand, array($naam, $email, $bericht, date('Y:m:d'), $waarde));
+    fputcsv($bestand, array($naam, $email, $bericht, date('Y:m:d'), $waarde, date("W")));
     fclose($bestand);
 }
 
@@ -62,5 +62,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
+<!--
+Ga jij met fiets of de auto/OV naar je werk of stage? Heb je een keuze?
 
+Wat heb jij nodig om fit te blijven in je werk/stage?
 
+Dilemma: Altijd staand werken of altijd zittend werken?
+
+Wat doe jij het liefst tijdens een pauze van je werk/stage? Geeft dat je energie?
+
+Eet en drink jij genoeg tijdens een werk/stage dag?
+
+Vraag jij je collega’s weleens om samen een rondje te lopen in de pauze van je werk/stage?
+
+Met wie praat jij op het werk of stage als jouw mentale batterij in het rood staat? 
+
+Wat vind jij het gezelligste moment van een werk of stageweek?
+
+Praat je met vrienden of familie wel eens over wat je meemaakt tijdens je werk/stage?
+
+Denk jij zo over je werk/stage?; “Ik beweeg meer dan genoeg op een werk/stage dag, sport hoeft dan niet meer.”
+
+Krijg jij van een gezonde lunch tijdens een werk/stage dag meer energie van dan een vette hap?
+
+-->
