@@ -22,19 +22,31 @@
         </nav>
     </header>
 <div class="outer_form">
-  
-        <div class="batterij" id="batterij-1"><img src="assests/img/Batterij.png" alt="bat-1"></div>
+    <div class="holder">
+        <div class="batterij" id="batterij-1">
+
+            <img src="assests/img/Project_3_Batterij_1.png	" alt="" srcset="">
+            <img src="assests/img/Project_3_Batterij_2.png" alt="" srcset="">
+            <img src="assests/img/Project_3_Batterij_3.png" alt="" srcset="">
+            <img src="assests/img/Project_3_Battery_4.png" alt="" srcset="">
+            <img src="assests/img/Project_3_Battery_5.png" alt="" srcset="">
+
+        </div>
 
 
 
 
-        <div class="batterij" id="batterij-2"><img src="assests/img/Batterij.png" alt="bat-2"></div>
+        <div class="batterij" id="batterij-2">
+
+        </div>
 
 
 
 
-        <div class="batterij" id="batterij-3"><img src="assests/img/Batterij.png" alt="bat-3"></div>
+        <div class="batterij" id="batterij-3">
 
+        </div>
+    </div>
 
     
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">

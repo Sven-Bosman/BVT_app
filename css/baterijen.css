@@ -1,2 +1,3 @@
 img{ height: 8rem;}
-.batterij{display: inline; width: fit-content;  list-style-type: none;}
+.batterij{display: block; background-image: url(../assests/img/Batterij.png); background-size: contain; background-repeat: no-repeat;}
+.holder{display: grid; grid-template-columns: repeat(3, 10rem); padding-bottom: 10%; grid-template-rows: repeat(1, 50rem); gap: 1rem;}
