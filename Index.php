@@ -22,9 +22,9 @@
         </nav>
     </header>
 <div class="outer_form">
-    <div class="batterij" id="batterij-1"></div>
-    <div class="batterij" id="batterij-2"></div>
-    <div class="batterij" id="batterij-3"></div>
+    <div class="batterij" id="batterij-1"><img src="assests/img/Batterij.png" alt="bat-1" width="10rem"></div>
+    <div class="batterij" id="batterij-2"><img src="assests/img/Batterij.png" alt="bat-2" width="10rem" ></div>
+    <div class="batterij" id="batterij-3"><img src="assests/img/Batterij.png" alt="bat-3" width="10rem" ></div>
 
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         Naam: <input type="text" name="naam" required><br>

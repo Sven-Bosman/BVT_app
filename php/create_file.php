@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Als het bestand nog niet bestaat, voeg de koppen toe
     if (!file_exists($bestandsnaam) && $checked == true) {
         $bestand = fopen($bestandsnaam, "a");
-        fputcsv($bestand, array(" Naam ", " E-mail ", " Bericht ", " Datum ", "check"));
+        fputcsv($bestand, array(" Naam ", " E-mail ", " Bericht ", " Datum ", "check", "week", "vraag", "antwoord", "batterij-1", "batterij-2", "baterrij-3"));
         $waarde = " Waar ";
 
         fclose($bestand);
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     elseif(!file_exists($bestandsnaam) && $checked == false){
         echo"vergeten in te checken."; 
         $bestand = fopen($bestandsnaam, "a");
-        fputcsv($bestand, array(" Naam ", " E-mail ", " Bericht ", " Datum ", "check"));
+        fputcsv($bestand, array(" Naam ", " E-mail ", " Bericht ", " Datum ", "check", "week", "vraag", "antwoord", "batterij-1", "batterij-2", "baterrij-3"));
         $waarde = " False "; 
         fclose($bestand);
     }
